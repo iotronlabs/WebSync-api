@@ -30,7 +30,7 @@ class DeviceController extends Controller
     {
        
         $device = Device::findOrFail($request->id);
-       $device->status = $request->status;
+       $device->device_status = $request->status;
     $device->save();
     return response()->json(['success'=>'Status change successfully.']);
 
