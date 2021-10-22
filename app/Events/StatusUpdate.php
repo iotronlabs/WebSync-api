@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Events;
+use App\Models\Device;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -13,15 +14,15 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class StatusUpdate implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-public $message;
+public $device;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct($device)
     {
-        $this->message = $message;
+        $this->device = $device;
     }
 
     /**
